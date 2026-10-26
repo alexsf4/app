@@ -1,0 +1,9 @@
+FOTOS DEL MEMORAMA
+==================
+Guarda aqui tus fotos (jpg, jpeg, png, webp o gif).
+- La web toma hasta 10 fotos AL AZAR cada vez que se juega (con 10 o mas fotos, siempre salen fotos distintas).
+- Si hay menos de 10, el resto de pares se completa con simbolos.
+- Si la carpeta esta vacia (solo este archivo), todo el juego usa simbolos.
+- Recomendado: fotos cuadradas o que se vean bien recortadas al centro, y livianas (menos de 300 KB cada una).
+- No uses nombres con caracteres raros. Mejor: foto1.jpg, foto2.jpg ...
+Sube la carpeta completa a GitHub junto con index.html.

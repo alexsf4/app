@@ -1,0 +1,91 @@
+INSTRUCCIONES (version sin Firebase: todo se guarda en tu GitHub)
+=================================================================
+Ya NO necesitas Firebase. Puedes ignorar todo lo de Firebase.
+
+
+PASO 1 - TOKEN DE GITHUB
+------------------------
+1. Entra a github.com. Pulsa tu foto (arriba derecha) > Settings.
+2. Abajo a la izquierda: "Developer settings".
+3. "Personal access tokens" > "Fine-grained tokens" > "Generate new token".
+4. Token name: regalo-yaddi
+   Expiration: el plazo mas largo que te deje.
+   Repository access: "Only select repositories" > elige TU repositorio de la web.
+   Permissions > Repository permissions > "Contents" > "Read and write".
+5. Pulsa "Generate token". Copia el texto que empieza por github_pat_
+   y ANOTALO (despues no se vuelve a ver).
+
+
+PASO 2 - COMPLETAR index.html
+-----------------------------
+1. Abre index.html con el Bloc de notas.
+2. Ctrl+F y busca:  PERSONALIZA
+3. Busca esta linea y completa tu usuario y el nombre de tu repositorio:
+
+   github: { usuario: "TU-USUARIO", repo: "NOMBRE-DEL-REPO", rama: "main" },
+
+   (el usuario y el repo son los de la direccion github.com/USUARIO/REPO)
+4. Guarda con Ctrl+G. No toques nada mas.
+
+
+PASO 3 - SUBIR A GITHUB
+-----------------------
+1. Entra a tu repositorio > "Add file" > "Upload files".
+2. Arrastra index.html Y listas.json (los dos). Pulsa "Commit changes".
+3. Espera 2 minutos y abre tu pagina con Ctrl+F5.
+
+
+PASO 4 - USARLA (la primera vez en cada celular)
+------------------------------------------------
+1. Pulsa "Añadir música".
+2. Pega el token github_pat_... y pulsa Entrar. (Se hace una sola vez por celular.)
+3. Escribe el nombre de la cancion > Buscar > Agregar.
+4. Sale como "Preparando..." unos minutos y despues ya suena.
+5. Para quitar una cancion: Editar listas y pulsa la X de la fila.
+
+
+COSAS QUE DEBES SABER
+---------------------
+- Los cambios tardan 1 o 2 minutos en verse en otros celulares (GitHub Pages
+  tiene que publicarlos). En el celular donde agregas, se ve al instante.
+- El token es la "clave": quien lo tenga puede editar las listas. No lo publiques.
+
+
+SI ALGO FALLA
+-------------
+- "No se pudo leer listas.json": no subiste listas.json al repositorio.
+- "Token incorrecto o sin acceso": el token esta mal copiado, vencio, o no se le dio acceso a ese repo.
+- "GitHub respondio 403": al token le falta Contents: Read and write.
+- "GitHub respondio 404": el usuario o el repo de CONFIG estan mal escritos.
+- "el navegador bloqueo la conexion (CORS)": avisame, hay que usar un intermediario.
+
+
+NOVEDADES (version con bienvenida, contador y favoritas)
+========================================================
+- Pantalla de bienvenida: sale al entrar (una vez por visita). Textos en CONFIG:
+  bienvenidaTitulo, bienvenidaTexto, bienvenidaBoton.
+- Llevamos juntos: se calcula solo desde la fecha de CONFIG: juntosDesde: "2022-09-29"
+  (formato año-mes-día). El mensaje de la segunda pagina es CONFIG: mensajeInicio
+  (donde escribas <3 sale un corazon).
+- Favoritas (corazon): cada celular guarda las suyas, no hace falta token.
+- Notas por cancion: entra en "Editar listas" y pulsa el lapiz de la fila. Se guarda
+  en listas.json y tambien se ve en la pantalla de letras.
+- Mezclar, Repetir (lista / una), Solo favoritas, buscador y Dormir (apaga la musica a
+  los 15, 30 o 60 minutos).
+- Para subir: reemplaza index.html (y INSTRUCCIONES.txt) en GitHub. NO hace falta tocar
+  listas.json ni la carpeta musica.
+
+
+LAS 3 PAGINAS
+=============
+1. Bienvenida (sobre "Abrir regalo").
+2. Tiempo juntos + tu mensaje, con el boton "Ver nuestra playlist".
+3. Playlist y reproductor, con el boton "Volver" arriba.
+El boton "atras" del celular tambien va de una pagina a otra.
+El texto del boton de la pagina 2 se cambia en CONFIG: botonLista.
+
+
+FOTO DE LA PLAYLIST
+===================
+La foto grande de la pagina 3 (mientras no suena nada) se cambia en CONFIG: fotoPlayer.
+Si se corta una parte importante, prueba fotoPlayerPos: "center top" o "center 30%".
