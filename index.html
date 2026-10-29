@@ -579,7 +579,7 @@ body[data-pagina="baile"]:not(.tiene-cancion){padding-bottom:40px}
     <div class="jmsg" id="jMsg"><span id="jMsgTxt"></span><small id="jMsgSub"></small></div>
   </div>
   <p class="jayuda" id="jAyuda"></p>
-  <div class="dia" id="jPremio" hidden><small>PREMIO DESBLOQUEADO</small><span id="jPremioTxt"></span></div>
+  <div class="dia" id="jPremio" hidden><span id="jPremioTxt"></span></div>
 </section>
 </div>
 
@@ -592,7 +592,7 @@ body[data-pagina="baile"]:not(.tiene-cancion){padding-bottom:40px}
   <div class="sp-grid" id="spGrid"></div>
   <div class="sp-pal" id="spPal"></div>
   <p class="pz-ayuda">Desliza el dedo sobre las letras, en cualquier dirección, para marcar una palabra.</p>
-  <div class="dia" id="spPremio" hidden><small>¡LAS ENCONTRASTE TODAS!</small><span id="spPremioTxt"></span></div>
+  <div class="dia" id="spPremio" hidden><span id="spPremioTxt"></span></div>
 </section>
 </div>
 
@@ -622,7 +622,7 @@ body[data-pagina="baile"]:not(.tiene-cancion){padding-bottom:40px}
   <div class="pz-barra"><button class="chip" id="memoNuevo">Barajar de nuevo</button><span class="pz-info" id="memoInfo"></span></div>
   <div class="memo-grid" id="memoGrid" role="group" aria-label="Cartas del memorama"></div>
   <p class="pz-ayuda" id="memoAyuda"></p>
-  <div class="dia" id="memoPremio" hidden><small>¡ENCONTRASTE TODOS LOS PARES!</small><span id="memoPremioTxt"></span><br><button class="chip" id="memoOtra">Jugar otra vez</button></div>
+  <div class="dia" id="memoPremio" hidden><span id="memoPremioTxt"></span><br><button class="chip" id="memoOtra">Jugar otra vez</button></div>
 </section>
 </div>
 
@@ -639,7 +639,7 @@ body[data-pagina="baile"]:not(.tiene-cancion){padding-bottom:40px}
   </div>
   <div class="pz-caja" id="pzCaja"><div class="pz-tablero" id="pzTablero"></div><div class="pz-prev" id="pzPrev"></div></div>
   <p class="pz-ayuda">Toca una pieza y luego otra para cambiarlas de lugar.</p>
-  <div class="dia" id="pzPremio" hidden><small>¡LO LOGRASTE!</small><span id="pzPremioTxt"></span><br><button class="chip" id="pzSig">Siguiente foto</button></div>
+  <div class="dia" id="pzPremio" hidden><span id="pzPremioTxt"></span><br><button class="chip" id="pzSig">Siguiente foto</button></div>
 </section>
 </div>
 
@@ -712,7 +712,7 @@ const CONFIG = {
   /* Rompecabezas (página 5): puedes poner las fotos que quieras en puzzleFotos */
   puzzleTitulo: "Armemos nuestros recuerdos",
   botonPuzzle: "Armar un rompecabezas",
-  puzzleFrase: "Lo armaste, mi niña. Cada pieza en su lugar, como tú en mi vida <3",
+  puzzleFrase: "VAMOS MI AMOR TU PUEDES YO CONFIO EN TI <3",
   puzzleFotos: [
     "https://files.catbox.moe/0qlgsr.jpg",
     "https://files.catbox.moe/sdggy4.png",
@@ -730,7 +730,7 @@ const CONFIG = {
     { nombre: "Sopa 2", palabras: ["Briana", "Melody", "Que", "Quieres", "Reconchetumare", "Preciosa", "Hermosa", "Berrinchuda"] },
     { nombre: "Sopa 3", palabras: ["Chiquita", "Mercurio", "Alexander", "Antonio", "Medrano", "Tulipanes", "Girasoles", "Estrella"] }
   ],
-  pupiFrase: "Las encontraste todas, mi niña. Cada una es algo de lo que siento por ti <3",
+  pupiFrase: "VAMOS MI AMOR TU PUEDES YO CONFIO EN TI <3",
 
   /* Memorama (página 7): pon tus fotos en la carpeta memoCarpeta (en el repositorio). La web las detecta sola.
      Si la detección falla, escribe aquí los nombres: memoFotos: ["foto1.jpg","foto2.jpg"]. Sin fotos, usa símbolos. */
@@ -740,7 +740,7 @@ const CONFIG = {
   memoPares: 10,
   /* Cuánto tiempo (en milisegundos) se ven las cartas destapadas al empezar, antes de juntarse y barajarse */
   memoVerMs: 3500,
-  memoFrase: "Encontraste todos los pares, mi niña. Tú y yo, siempre hacemos buena pareja <3",
+  memoFrase: "VAMOS MI AMOR TU PUEDES YO CONFIO EN TI <3",
 
   /* Nuestro baile (página 8): las dos fotos recortadas están en la carpeta baile. Donde pongas <3 sale un corazón */
   baileTitulo: "Nuestro baile",
@@ -748,7 +748,7 @@ const CONFIG = {
   baileCarpeta: "baile",
 
   juegoPremioPuntos: 300,
-  juegoPremioTexto: "Llegaste a 300 puntos. Tu premio: un abrazo larguísimo la próxima vez que nos veamos <3",
+  juegoPremioTexto: "VAMOS MI AMOR TU PUEDES YO CONFIO EN TI <3",
 
   /* Contador "Llevamos juntos": año-mes-día */
   juntosDesde: "2022-09-29",
@@ -771,6 +771,7 @@ const CONFIG = {
 };
 /* ========================================== */
 
+const MSG_ANIMO = "VAMOS MI AMOR TU PUEDES YO CONFIO EN TI ❤";
 const $ = id => document.getElementById(id);
 const audio = $("audio");
 
@@ -1488,7 +1489,7 @@ window.Juego = (function(){
 
   $("juegoTitulo").textContent = CONFIG.juegoTitulo;
   $("jRecord").textContent = record;
-  $("jAyuda").textContent = "Toca la pantalla, o pulsa espacio o flecha arriba, para saltar. Llega a " + CONFIG.juegoPremioPuntos + " puntos para desbloquear un mensaje.";
+  $("jAyuda").textContent = "Toca la pantalla, o pulsa espacio o flecha arriba, para saltar.";
   function mostrarPremio(){ $("jPremio").hidden = false; conCorazones($("jPremioTxt"), CONFIG.juegoPremioTexto); $("jAyuda").hidden = true; }
   if (premio) mostrarPremio();
 
@@ -1529,7 +1530,7 @@ window.Juego = (function(){
     for (const o of obs) {
       if (dino.x + 7 < o.x + o.w - 3 && dino.x + 36 > o.x + 3 && dino.y - 4 > SUELO - o.h + 4) { terminar(); return; }
     }
-    if (!premio && puntos >= CONFIG.juegoPremioPuntos) { premio = true; escribirLS("regalo_premio", "1"); mostrarPremio(); toast("Desbloqueaste un mensaje"); }
+    if (!premio && puntos >= CONFIG.juegoPremioPuntos) { premio = true; escribirLS("regalo_premio", "1"); mostrarPremio(); toast(MSG_ANIMO); }
   }
 
   function dibujarDino(muerto){
@@ -1649,7 +1650,7 @@ window.Puzzle = (function(){
     const r = +leerLS(clave()) || 0, rec = !r || movs < r;
     if (rec) escribirLS(clave(), String(movs));
     info(); $("pzPremio").hidden = false;
-    conCorazones($("pzPremioTxt"), CONFIG.puzzleFrase + " (" + movs + " movimientos, " + tm(tiempo) + (rec ? ", nuevo récord" : "") + ")");
+    conCorazones($("pzPremioTxt"), CONFIG.puzzleFrase);
   }
 
   document.querySelectorAll("#pzNivel .chip").forEach(c => c.onclick = () => { n = +c.dataset.n; escribirLS("regalo_pz_n", String(n)); nuevo(); });
@@ -1759,7 +1760,7 @@ window.Pupi = (function(){
     const mj = +leerLS(clave()) || 0, rec = !mj || tiempo < mj;
     if (rec) escribirLS(clave(), String(tiempo));
     info(); $("spPremio").hidden = false;
-    conCorazones($("spPremioTxt"), CONFIG.pupiFrase + " (" + tm(tiempo) + (rec ? ", nuevo récord" : "") + ")");
+    conCorazones($("spPremioTxt"), CONFIG.pupiFrase);
   }
   $("spNueva").onclick = nuevo;
   $("spPista").onclick = () => {
@@ -1893,7 +1894,7 @@ window.Memo = (function(){
     const mj = +leerLS(clave()) || 0, rec = !mj || movs < mj;
     if (rec) escribirLS(clave(), String(movs));
     info(); $("memoPremio").hidden = false;
-    conCorazones($("memoPremioTxt"), CONFIG.memoFrase + " (" + movs + " movimientos, " + tm(tiempo) + (rec ? ", nuevo récord" : "") + ")");
+    conCorazones($("memoPremioTxt"), CONFIG.memoFrase);
     setTimeout(() => $("memoPremio").scrollIntoView({ behavior: "smooth", block: "nearest" }), 500);
   }
   $("memoNuevo").onclick = nuevo; $("memoOtra").onclick = nuevo;
